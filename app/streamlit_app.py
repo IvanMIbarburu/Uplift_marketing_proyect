@@ -29,7 +29,7 @@ by balancing treatment cost and conversion value.
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_PATH = os.path.join(
     BASE_DIR, "..", "data", "processed",
-    "criteo-uplift-processed_sample20_sorted.parquet"
+    "criteo-uplift-processed_sample10_sorted.parquet"
 )
 
 @st.cache_data

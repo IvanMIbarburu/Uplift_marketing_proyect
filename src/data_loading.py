@@ -14,13 +14,13 @@ OUTPUT_PATH = os.path.join(
     "..",
     "data",
     "processed",
-    "criteo-uplift-processed_sample20_sorted.parquet"
+    "criteo-uplift-processed_sample10_sorted.parquet"
 )
 
 FEATURE_COLS = [f"f{i}" for i in range(12)]
 
 
-def prepare_processed_data(sample_frac=0.2, random_state=42):
+def prepare_processed_data(sample_frac=0.099, random_state=42):
 
     print("Cargando datos crudos...")
     df = pd.read_csv(RAW_DATA_PATH)

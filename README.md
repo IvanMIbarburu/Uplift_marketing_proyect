@@ -30,6 +30,7 @@ A Streamlit app allows real-time "what-if"" analysis:
 - Adjust business parameters
 - Visualize profit curves
 - Identify optimal targeting strategy
+- Use only 10% of the original dataset
 
 Link to app: (link to Streamlit Cloud)
 
