@@ -7,7 +7,7 @@ Traditional conversion models predict *who will convert*, but not *who should be
 Uplift modeling estimates the **causal impact** of showing an ad.
 
 ## Data
-This project uses the public Criteo Uplift Prediction Dataset from Kaggle [https://www.kaggle.com/code/lcw2099/criteo-uplift-modeling]
+This project uses the public Criteo Uplift Prediction Dataset from Kaggle [https://www.kaggle.com/datasets/arashnic/uplift-modeling]
 Due to size of the csv file and good practices, raw data is not included in the repository. Please download it and place it under 'data/raw' to reproduce the results.
 
 ## Approach
