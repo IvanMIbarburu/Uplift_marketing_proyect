@@ -1,8 +1,17 @@
+# Ignore the virtual environment
 venv/
-data/raw/
-data/processed/
-.ipynb_checkpoints/
-__pycache__/
-*.pyc
+
+# Ignore raw dataset files (grandes)
+data/raw/*.csv
+
+# Ignore processed files grandes
+data/processed/*.csv
+data/processed/*_sample20_sorted.parquet
+
+# Allow smaller sample parquet files (por ejemplo sample10)
+!data/processed/*_sample10_sorted.parquet
+
+# Keep raw folder placeholder
+!data/raw/.gitkeep
 
 
