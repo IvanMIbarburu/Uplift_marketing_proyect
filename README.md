@@ -32,7 +32,7 @@ A Streamlit app allows real-time "what-if"" analysis:
 - Identify optimal targeting strategy
 - Use only 10% of the original dataset
 
-Link to app: (link to Streamlit Cloud)
+Link to app: [https://upliftmarketingproyect-h8a5sxxo5lyzhjjgexcmhv.streamlit.app/]
 
 ## PDF presentation
 Project presentation to show the results and the value of this analysis

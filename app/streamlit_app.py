@@ -3,7 +3,6 @@ import pandas as pd
 import os
 import numpy as np
 import plotly.graph_objects as go
-import time
 
 from utils import (precompute_uplift_stats, compute_profit_curves,)
 
@@ -36,10 +35,9 @@ DATA_PATH = os.path.join(
 def load_data():
     return pd.read_parquet(DATA_PATH)
 
-t0 = time.perf_counter()
+
 df = load_data()
-t1 = time.perf_counter()
-st.sidebar.write(f"⏱ Load data: {(t1 - t0):.3f}s")
+
 
 # ----------------------------
 # Precomputación pesada (UNA VEZ)
@@ -50,10 +48,8 @@ PERCENTILES = np.linspace(0.01, 1.0, 100)
 def precompute(df):
     return precompute_uplift_stats(df)
 
-t0 = time.perf_counter()
+
 uplift_stats = precompute(df)
-t1 = time.perf_counter()
-st.sidebar.write(f"⏱ Precompute stats: {(t1 - t0):.3f}s")
 
 # ----------------------------
 # Inputs de negocio
@@ -92,7 +88,6 @@ population_size = st.sidebar.number_input(
 # ----------------------------
 # Cálculo rápido (en cada interacción)
 # ----------------------------
-t0 = time.perf_counter()
 
 results = compute_profit_curves(
     uplift_stats=uplift_stats,
@@ -102,16 +97,6 @@ results = compute_profit_curves(
     conversion_value=conversion_value
 )
 
-
-t1 = time.perf_counter()
-st.sidebar.write(f"⏱ Compute profit: {(t1 - t0):.3f}s")
-
-
-# baseline_profit = (
-#     population_size
-#     * uplift_stats["uplift_global"]
-#     * 0  # baseline incremental = 0
-#     )
 
 st.info(
     f"Baseline (no treatment): "
@@ -157,12 +142,6 @@ fig.update_layout(
     xaxis_title="Proportion of population targeted (%)",
     yaxis_title="Expected profit (€)",
     template="plotly_white",
-    # legend=dict(
-    #     yanchor="top",
-    #     y=0.99,
-    #     xanchor="right",
-    #     x=0.99
-    # ),
     height=500
 )
 
@@ -171,7 +150,7 @@ st.plotly_chart(fig, use_container_width=True)
 # ----------------------------
 # Resultados clave
 # ----------------------------
-st.markdown("### 📊 Optimal Strategy")
+st.markdown("### Optimal Strategy")
 
 col1, col2, col3 = st.columns(3)
 
