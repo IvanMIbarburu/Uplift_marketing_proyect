@@ -36,7 +36,7 @@ Link to app: (link to Streamlit Cloud)
 ## PDF presentation
 Project presentation to show the results and the value of this analysis
 
-## 🔮 Future Work
+## Future Work
 - Tree-based uplift models
 - Multi-treatment scenarios
 - Policy learning / bandits
