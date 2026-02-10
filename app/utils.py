@@ -11,6 +11,7 @@ def precompute_uplift_stats(df):
 
     # Baseline: conversión media del control (no treatment)
     control_mean_conv = df[df["treatment"] == 0]["conversion"].mean()
+    print(control_mean_conv)
 
     # Uplift global (random targeting)
     global_treat_rate = df[df["treatment"] == 1]["conversion"].mean()
@@ -30,6 +31,7 @@ def precompute_uplift_stats(df):
         "percentiles": percentiles,
         "uplift_local": np.array(uplift_local),
         "uplift_global": global_uplift,
+        "baseline": control_mean_conv
     }
 
 

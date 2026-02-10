@@ -100,7 +100,7 @@ results = compute_profit_curves(
 
 st.info(
     f"Baseline (no treatment): "
-    f"{population_size * uplift_stats['uplift_global'] * conversion_value:,.0f} € "
+    f"{population_size * uplift_stats['baseline'] * conversion_value:,.0f} € "
     f"(shown as y = 0 in the chart)"
 )
 
@@ -111,16 +111,16 @@ st.info(
 fig = go.Figure()
 
 fig.add_trace(go.Scatter(
-    x=results["percentiles"] * 100,
-    y=results["profit_uplift"],
+    x=np.concatenate(([0], results["percentiles"] * 100)),
+    y=np.concatenate(([0], results["profit_uplift"])),
     mode="lines",
     name="Uplift-based targeting",
     line=dict(width=3)
 ))
 
 fig.add_trace(go.Scatter(
-    x=results["percentiles"] * 100,
-    y=results["profit_random"],
+    x=np.concatenate(([0], results["percentiles"] * 100)),
+    y=np.concatenate(([0], results["profit_random"])),
     mode="lines",
     name="Random targeting",
     line=dict(width=3, dash="dash")
