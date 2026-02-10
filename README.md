@@ -13,7 +13,7 @@ Due to size of the csv file and good practices, raw data is not included in the 
 ## Approach
 - Two-model uplift approach (treatment vs control)
 - Logistic regression for ranking users (simplest model)
-- Uplift and Qini evaluation (for sorting the users)
+- Uplift and AUC evaluation (for sorting the users)
 - Economic optimization using business parameters ("what-if" scenarios)
 
 
@@ -32,12 +32,13 @@ A Streamlit app allows real-time "what-if"" analysis:
 - Identify optimal targeting strategy
 - Use only 10% of the original dataset
 
-Link to app: [https://upliftmarketingproyect-h8a5sxxo5lyzhjjgexcmhv.streamlit.app/]
+Link to app: [https://upliftmarketingproyect-x4xqd2kprx5pzpcs8j3mvm.streamlit.app/]
 
 ## PDF presentation
 Project presentation to show the results and the value of this analysis
 
 ## Future Work
-- Tree-based uplift models
-- Multi-treatment scenarios
-- Policy learning / bandits
+Try different approaches and models
+- T-learner with XGBoost
+- S-learner
+- Class Transformation
